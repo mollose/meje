@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEJE WORKS | 메제웍스</title>
+    <!-- 프리텐다드 폰트 적용 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
+        body, html { margin: 0; width: 100%; height: 100%; overflow: hidden; background-color: #000; }
+
+        /* 스크롤 스냅 */
+        .snap-container { height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+        section { width: 100%; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; scroll-snap-align: start; position: relative; padding: 0 40px; }
+
+        .bg-black { background-color: #000; color: #fff; }
+        .bg-white { background-color: #fff; color: #000; }
+
+        /* 섹션 1: 메인 로고 */
+        .main-logo-img { width: 100%; max-width: 800px; height: auto; opacity: 0; transform: translateY(20px); animation: fadeInLogo 1.5s ease-out forwards; }
+        @keyframes fadeInLogo { to { opacity: 1; transform: translateY(0); } }
+
+        /* 섹션 2: 파트너스 */
+        .partners-title { font-size: 3rem; font-weight: 800; letter-spacing: 0.15em; margin-bottom: 50px; text-align: center; }
+        .partners-full-img { width: 100%; max-width: 1200px; height: auto; }
+
+        /* 섹션 3: 컨택트 */
+        .contact-container { width: 100%; max-width: 900px; text-align: left; }
+        .contact-label { font-size: 1.1rem; color: #666; letter-spacing: 3px; margin-bottom: 15px; text-transform: uppercase; }
+        .contact-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+        .contact-info { line-height: 2.2; margin-bottom: 40px; }
+        .company-name { font-size: 1.6rem; font-weight: 600; margin-bottom: 15px; }
+        .info-item { font-size: 1.15rem; color: #ccc; display: flex; }
+        .info-item span { width: 90px; color: #666; font-weight: 500; }
+
+        /* 눈에 띄는 프라이버시 버튼 (정보 바로 아래 배치) */
+        .privacy-cta {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 30px;
+            font-size: 1rem;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .privacy-cta:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .copyright { position: absolute; bottom: 40px; left: 40px; font-size: 0.8rem; color: #444; }
+
+        @media (max-width: 768px) {
+            .contact-title { font-size: 2.5rem; }
+            .partners-title { font-size: 2rem; }
+            .contact-container { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="snap-container">
+        <!-- 섹션 1: 로고 -->
+        <section class="bg-black">
+            <img src="data/logo.png" alt="MEJE Logo" class="main-logo-img">
+        </section>
+
+        <!-- 섹션 2: 파트너스 (화이트 바탕) -->
+        <section class="bg-white">
+            <h2 class="partners-title">MEJE PARTNERS</h2>
+            <img src="data/partners.png" alt="MEJE Partners" class="partners-full-img">
+        </section>
+
+        <!-- 섹션 3: 컨택트 -->
+        <section class="bg-black">
+            <div class="contact-container">
+                <p class="contact-label">Get in Touch</p>
+                <h2 class="contact-title">Contact Us</h2>
+                <div class="contact-info">
+                    <p class="company-name">(주) 메제웍스</p>
+                    <div class="info-item"><span>메일</span> Contact@meje.kr</div>
+                    <div class="info-item"><span>전화</span> 070-7785-1102</div>
+                    <div class="info-item"><span>주소</span> 서울특별시 강남구 역삼로 217 (합동빌딩) 503호</div>
+                </div>
+                <!-- 눈에 띄게 배치한 버튼 -->
+                <a href="privacy.html" class="privacy-cta">개인정보 처리방침</a>
+            </div>
+            <div class="copyright">© MEJE WORKS. All Rights Reserved.</div>
+        </section>
+    </div>
+</body>
+</html>
